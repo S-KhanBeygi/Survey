@@ -8,16 +8,6 @@ namespace DaraSurvey.Extentions
 {
     public static class ExIdentity
     {
-        public static string GetErrorMessage(this IdentityResult result)
-        {
-            if (result.Succeeded)
-                return "Succeeded";
-            else
-                return String.Join(" | ", result.Errors.Select(e => e.Description));
-        }
-
-        // ----------------------
-
         public static string GetUserId(this HttpRequest request)
         {
             var claim = GetClaim(request, ClaimTypes.NameIdentifier);

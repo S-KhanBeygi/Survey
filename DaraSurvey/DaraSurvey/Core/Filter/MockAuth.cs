@@ -22,7 +22,7 @@ namespace DaraSurvey.Core.Filter
                 context.Result = new UnauthorizedResult();
 
             var hasRequiredRole = claimsRoles.Any(o => validRoles.Contains(o));
-            if (!hasRequiredRole)
+            if (!hasRequiredRole && !string.IsNullOrEmpty(Roles))
                 context.Result = new ForbidResult();
         }
     }

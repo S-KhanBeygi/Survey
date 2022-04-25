@@ -1,6 +1,7 @@
-﻿using DaraSurvey.Core.Filters;
+﻿using DaraSurvey.Core.Filter;
 using DaraSurvey.Core.Request;
 using DaraSurvey.Extentions;
+using DaraSurvey.Models;
 using DaraSurvey.Services.SurveryServices;
 using DaraSurvey.Services.SurveryServices.Entities;
 using DaraSurvey.Services.SurveryServices.Models;
@@ -22,7 +23,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpGet]
-        [JwtAuth]
+        [MockUser(Role = Role.users)]
+        [MockAuth(Roles = "users")]
         public ActionResult<IEnumerable<UsersSurvey>> GetOverview([FromQuery] UserSurveyOrderedFilter model)
         {
             if (!Request.GetUserRoles().Any(o => o == "root"))
@@ -36,7 +38,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpGet("count")]
-        [JwtAuth]
+        [MockUser(Role = Role.users)]
+        [MockAuth(Roles = "users")]
         public ActionResult<int> GetOverviewCount([FromQuery] UserSurveyFilter model)
         {
             if (!Request.GetUserRoles().Any(o => o == "root"))
@@ -50,8 +53,9 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpPatch("{id}/approved")]
-        [JwtAuth(Roles = "root, surveys")]
-        public ActionResult<Survey> Count([FromRoute] int id, [FromQuery] bool approved)
+        [MockUser(Role = Role.root)]
+        [MockAuth(Roles = "root")]
+        public ActionResult<Survey> Approved([FromRoute] int id, [FromQuery] bool approved)
         {
             _userSurveyService.Approved(id, approved);
 

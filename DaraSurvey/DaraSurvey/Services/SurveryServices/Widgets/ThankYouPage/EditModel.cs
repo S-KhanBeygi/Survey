@@ -1,11 +1,13 @@
 ﻿using DaraSurvey.WidgetServices.Models;
 
-namespace DaraSurvey.Widgets.WelcomePage
+namespace DaraSurvey.Widgets.ThankYouPage
 {
     public class EditModel : EditModelBase
     {
         public string Text { get; set; }
 
-        public DaraSurvey.Widgets.Images.Item Image { get; set; }
+        public string Image { get; set; }
+
+        public string ReturnUrl { get; set; }
     }
 }

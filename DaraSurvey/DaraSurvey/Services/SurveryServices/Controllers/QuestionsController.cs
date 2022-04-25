@@ -9,8 +9,6 @@ using System.Collections.Generic;
 namespace DaraSurvey.WidgetServices.Controllers
 {
     [Route("api/v1/questions")]
-
-
     public class QuestionsController : ControllerBase
     {
         private readonly IQuestionService _questionService;
@@ -26,7 +24,7 @@ namespace DaraSurvey.WidgetServices.Controllers
 
         [HttpGet]
         [MockUser(Role = Role.root)]
-        [MockAuth(Roles = "root, surveys")]
+        [MockAuth(Roles = "root")]
         public ActionResult<IEnumerable<QuestionRes>> GetAll([FromQuery] QuestionOrderedFilter model)
         {
             var entities = _questionService.GetAll(model, true);
@@ -37,6 +35,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpGet("count")]
+        [MockUser(Role = Role.root)]
+        [MockAuth(Roles = "root")]
         public ActionResult<int> Count([FromQuery] QuestionFilter model)
         {
             var result = _questionService.Count(model);
@@ -46,6 +46,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpGet("{id}")]
+        [MockUser(Role = Role.root)]
+        [MockAuth(Roles = "root")]
         public ActionResult<QuestionRes> Get([FromRoute] int id)
         {
             var entity = _questionService.Get(id, true);
@@ -56,6 +58,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpPost]
+        [MockUser(Role = Role.root)]
+        [MockAuth(Roles = "root")]
         public ActionResult<QuestionRes> Create([FromBody] QuestionCreation model)
         {
             var entity = _questionService.Create(model);
@@ -66,6 +70,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpPut("{id}")]
+        [MockUser(Role = Role.root)]
+        [MockAuth(Roles = "root")]
         public ActionResult<QuestionRes> Update([FromRoute] int id, [FromBody] QuestionUpdation model)
         {
             var entity = _questionService.Update(id, model);
@@ -76,6 +82,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpDelete("{id}")]
+        [MockUser(Role = Role.root)]
+        [MockAuth(Roles = "root")]
         public ActionResult Delete([FromRoute] int id)
         {
             _questionService.Delete(id);

@@ -1,5 +1,4 @@
-﻿using DaraSurvey.Interfaces;
-using DaraSurvey.Services;
+﻿using DaraSurvey.Services;
 using DaraSurvey.Services.SurveryServices;
 using DaraSurvey.WidgetServices;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,10 +10,6 @@ namespace DaraSurvey.Core
         public static void AddContainers(this IServiceCollection services)
         {
             services.AddHttpClient();
-            services.AddScoped<IRoleService, RoleService>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAccountService, AccountService>();
-            services.AddScoped<IFileSystemService, FileSystemService>();
             services.AddScoped<IUserSurveyService, UserSurveyService>();
             services.AddScoped<IUserResponseService, UserResponseService>();
             services.AddScoped<IQuestionService, QuestionService>();

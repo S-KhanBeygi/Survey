@@ -1,5 +1,4 @@
 ﻿using DaraSurvey.Core;
-using DaraSurvey.Entities;
 using DaraSurvey.WidgetServices;
 using DaraSurvey.WidgetServices.Models;
 using Microsoft.EntityFrameworkCore;
@@ -37,9 +36,7 @@ namespace DaraSurvey.Services.SurveryServices.Entities
 
         public TimeSpan? AllowedDelayTime { get; set; }
 
-        [ForeignKey("SurveyDesigner")]
         public string SurveyDesignerId { get; set; }
-        public User SurveyDesigner { get; set; }
 
         [Attachment("Survey", "Logo")]
         public string Logo { get; set; }

@@ -1,9 +1,7 @@
 using AutoMapper;
 using DaraSurvey.Core.PackagesConfig;
-using DaraSurvey.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,7 +33,6 @@ namespace DaraSurvey.Core
             services.AddAutoMapper(typeof(Startup));
             services.Configure<AppSettings>(options => Configuration.Bind(options));
             services.AddSqlServerDatabase(Configuration);
-            services.IdentityConfig();
             services.JwtConfig(appSettings);
             services.AddCorsConfigs();
             services.AddControllers();
@@ -45,7 +42,7 @@ namespace DaraSurvey.Core
 
         // --------------------
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.EnsureMigrationOfContext<DB>();
             app.UseHsts();
@@ -54,9 +51,7 @@ namespace DaraSurvey.Core
             app.UseSwagerDocumentation();
             app.UseCors("EnableCors");
             app.UseCustomExceptionHandler(env);
-            app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-            IdentityConfiguration.IdentitySeedAsync(userManager, roleManager).Wait();
         }
     }
 }

@@ -11,9 +11,9 @@ namespace DaraSurvey.Core.PackagesConfig
                 options.AddPolicy("EnableCors", builder =>
                 {
                     builder.AllowAnyOrigin()
-                    .AllowAnyHeader()
-                           .AllowAnyMethod()
-                           .Build();
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .Build();
                 });
             });
         }

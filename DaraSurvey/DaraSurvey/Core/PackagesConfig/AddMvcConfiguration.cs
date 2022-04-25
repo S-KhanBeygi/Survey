@@ -11,8 +11,6 @@ namespace DaraSurvey.Core.PackagesConfig
             services.AddMvc(options =>
             {
                 options.Filters.Add(new ModelStateValidator());
-                options.Filters.Add(new AllowAnonymousFilter());
-                options.Filters.Add(typeof(MockUserAttribute), 0);
             });
         }
     }
