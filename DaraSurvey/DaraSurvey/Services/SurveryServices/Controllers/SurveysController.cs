@@ -26,7 +26,7 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpGet("overview")]
-        //[JwtAuth]
+        [JwtAuth]
         public ActionResult<IEnumerable<SurveyOverviewRes>> GetOverview([FromQuery] SurveyOverviewOrderedFilter model)
         {
             model.UserId = Request.GetUserId();

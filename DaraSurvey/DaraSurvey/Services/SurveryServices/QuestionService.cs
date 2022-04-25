@@ -73,7 +73,7 @@ namespace DaraSurvey.Services.SurveryServices
         public Question Update(int id, QuestionDtoBase model)
         {
             var entity = Get(id);
-            
+
             ThrowExceptionIfSurveyHasAcceptedUser(entity.SurveyId);
 
             entity = _mapper.Map((QuestionUpdation)model, entity);

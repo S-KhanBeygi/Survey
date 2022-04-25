@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DaraSurvey.Core.Filter;
+using DaraSurvey.Models;
 using DaraSurvey.Services.SurveryServices;
 using DaraSurvey.Services.SurveryServices.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +9,8 @@ using System.Collections.Generic;
 namespace DaraSurvey.WidgetServices.Controllers
 {
     [Route("api/v1/questions")]
-    //[JwtAuth(Roles = "root, surveys")]
+
+
     public class QuestionsController : ControllerBase
     {
         private readonly IQuestionService _questionService;
@@ -22,7 +25,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         // --------------------
 
         [HttpGet]
-
+        [MockUser(Role = Role.root)]
+        [MockAuth(Roles = "root, surveys")]
         public ActionResult<IEnumerable<QuestionRes>> GetAll([FromQuery] QuestionOrderedFilter model)
         {
             var entities = _questionService.GetAll(model, true);

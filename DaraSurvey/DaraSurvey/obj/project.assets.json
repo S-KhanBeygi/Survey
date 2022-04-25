@@ -6537,11 +6537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sohail KhanBeygi\\Desktop\\DaraWidgetSurvey\\DaraSurvey\\DaraSurvey\\DaraSurvey.csproj",
+      "projectUniqueName": "C:\\Users\\Sohail KhanBeygi\\Desktop\\Survey\\DaraSurvey\\DaraSurvey\\DaraSurvey.csproj",
       "projectName": "DaraSurvey",
-      "projectPath": "C:\\Users\\Sohail KhanBeygi\\Desktop\\DaraWidgetSurvey\\DaraSurvey\\DaraSurvey\\DaraSurvey.csproj",
+      "projectPath": "C:\\Users\\Sohail KhanBeygi\\Desktop\\Survey\\DaraSurvey\\DaraSurvey\\DaraSurvey.csproj",
       "packagesPath": "C:\\Users\\Sohail KhanBeygi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sohail KhanBeygi\\Desktop\\DaraWidgetSurvey\\DaraSurvey\\DaraSurvey\\obj\\",
+      "outputPath": "C:\\Users\\Sohail KhanBeygi\\Desktop\\Survey\\DaraSurvey\\DaraSurvey\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -31,7 +31,7 @@ namespace DaraSurvey.Core
 
             services.AllowSynchronousIO();
             services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
-            services.AddMvc(options => { options.Filters.Add(new ModelStateValidator()); });
+            services.AddMvcConfigs();
             services.AddAutoMapper(typeof(Startup));
             services.Configure<AppSettings>(options => Configuration.Bind(options));
             services.AddSqlServerDatabase(Configuration);

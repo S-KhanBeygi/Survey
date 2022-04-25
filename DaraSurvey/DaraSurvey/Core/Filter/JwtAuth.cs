@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace DaraSurvey.Core.Filters
 {
-    public class JwtAuth : AuthorizeAttribute
+    public class JwtAuth : AuthorizeAttribute, IOrderedFilter
     {
         public JwtAuth()
         {
@@ -17,6 +18,8 @@ namespace DaraSurvey.Core.Filters
             Init();
             this.Policy = policy;
         }
+
+        public int Order => int.MaxValue;
 
         // --------------------
 

@@ -3,7 +3,6 @@
     public enum Role
     {
         root,
-        users,
-        surveys
+        user
     }
 }

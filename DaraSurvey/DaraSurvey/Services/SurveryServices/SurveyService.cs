@@ -107,7 +107,7 @@ namespace DaraSurvey.Services.SurveryServices
         {
             ThrowExceptionIfSurveyHasAcceptedUser(id);
             ThrowExceptionIfSurveyHasAnyQuestion(id);
-            
+
             var entity = Get(id);
 
             entity.Deleted = DateTime.UtcNow;
@@ -182,7 +182,7 @@ namespace DaraSurvey.Services.SurveryServices
         }
 
         // ------------------------
-        
+
         private void ThrowExceptionIfSurveyHasAnyQuestion(int surveyId)
         {
             var hasQuestion = _db.Set<Question>().Any(o => o.SurveyId == surveyId);
