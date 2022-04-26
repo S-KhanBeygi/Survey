@@ -1,0 +1,64 @@
+﻿{
+  "text": "dolor dolore Duis",
+  "widget": {
+    "id": "TextQ1",
+    "type": "Text",
+    "title": "سوال تشریحی با طول 10 کاراکتر",
+    "subtitle": "eu dolore exercitation aliqua",
+    "url": "ex ut",
+    "viewData": "fugiat veniam",
+    "availability": "minim",
+    "text" : " به نظر شما آیاز درست می باشد",
+    "view" : "veiw data",
+    "maximumLength" : 10
+  },
+  "surveyId": 2,
+  "isRequired": true,
+  "isContable" : false
+}
+
+
+{
+  "text": "dolor dolore Duis",
+  "widget": {
+    "id": "TextQ2",
+    "type": "StarRaiting",
+    "title": "ستاره ای پنج تایی",
+    "subtitle": "eu dolore exercitation aliqua",
+    "url": "ex ut",
+    "viewData": "fugiat veniam",
+    "availability": "minim",
+    "text" : " به نظر شما آیاز درست می باشد",
+    "items":[
+        {"id":1, "title":"s1"},
+        {"id":2, "title":"s2"},
+        {"id":3, "title":"s3"},
+        {"id":4, "title":"s4"},
+        {"id":5, "title":"s5"}]
+  },
+  "surveyId": 2,
+  "isRequired": true,
+  "isContable" : true
+}
+
+{
+  "text": "dolor dolore Duis",
+  "widget": {
+    "id": "TextQ2",
+    "type": "Dropdown",
+    "title": "ستاره ای پنج تایی",
+    "subtitle": "eu dolore exercitation aliqua",
+    "url": "ex ut",
+    "viewData": "fugiat veniam",
+    "availability": "minim",
+    "items":[
+        {"id":1, "title":"s1"},
+        {"id":2, "title":"s2"},
+        {"id":3, "title":"s3"},
+        {"id":4, "title":"s4"},
+        {"id":5, "title":"s5"}]
+  },
+  "surveyId": 2,
+  "isRequired": true,
+  "isContable" : true
+}
