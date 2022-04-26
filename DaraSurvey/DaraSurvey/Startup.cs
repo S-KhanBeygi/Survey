@@ -33,7 +33,7 @@ namespace DaraSurvey.Core
             services.AddAutoMapper(typeof(Startup));
             services.Configure<AppSettings>(options => Configuration.Bind(options));
             services.AddSqlServerDatabase(Configuration);
-            services.JwtConfig(appSettings);
+            //services.JwtConfig(appSettings);
             services.AddCorsConfigs();
             services.AddControllers();
             services.AddContainers();

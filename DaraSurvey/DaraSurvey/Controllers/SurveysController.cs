@@ -100,6 +100,7 @@ namespace DaraSurvey.WidgetServices.Controllers
         [MockAuth(Roles = "root")]
         public ActionResult<SurveyRes> Create([FromBody] SurveyCreation model)
         {
+            model.SurveyDesignerId = Request.GetUserId();
             var entity = _surveyService.Create(model);
             var result = _mapper.Map<SurveyRes>(entity);
             return Ok(result);
@@ -144,7 +145,7 @@ namespace DaraSurvey.WidgetServices.Controllers
         [HttpPost("{id}/responses")]
         [MockUser(Role = Role.users)]
         [MockAuth(Roles = "users")]
-        public ActionResult SetSurveyResponses([FromRoute] int id, [FromQuery] IEnumerable<SurveyResponse> model)
+        public ActionResult SetSurveyResponses([FromRoute] int id, [FromBody] IEnumerable<SurveyResponse> model)
         {
             _userSurveyService.SetSurveyResponses(id, Request.GetUserId(), model);
             return NoContent();

@@ -126,7 +126,7 @@ namespace DaraSurvey.Services.SurveryServices
             #region local functions
             void ThrowExceptionIfUserSurveyHasNotApproveStatus()
             {
-                if (userSurvey.Status != UserSurveyStatus.Approved)
+                if (userSurvey.Status == UserSurveyStatus.Requested || userSurvey.Status == UserSurveyStatus.Disapproved)
                     throw new ServiceException(HttpStatusCode.BadRequest, ServiceExceptionCode.RequestedSurveyHasNotApproveStatus);
             }
             void SetExamStarted()
@@ -184,9 +184,9 @@ namespace DaraSurvey.Services.SurveryServices
 
                 var responseQuestionIds = userResponses.Select(o => o.QuestionId);
 
-                var exceptedQuestionIds = validQuestionIds.Except(responseQuestionIds);
+                var exceptedQuestionIds = validQuestionIds.Except(responseQuestionIds).Count();
 
-                if (exceptedQuestionIds != null || validQuestionIds.Count() != responseQuestionIds.Count())
+                if (exceptedQuestionIds >= 1 || validQuestionIds.Count() != responseQuestionIds.Count())
                     throw new ServiceException(HttpStatusCode.BadRequest, ServiceExceptionCode.InvalidResponseQuestionId);
             }
             void ThrowExceptionIfSurveyResponseInvalid()
@@ -242,7 +242,7 @@ namespace DaraSurvey.Services.SurveryServices
         {
             var entity = _db.Set<UsersSurvey>().SingleOrDefault(o => o.Id == id);
             if (entity == null)
-                throw new ServiceException(HttpStatusCode.NotFound);
+                throw new ServiceException(HttpStatusCode.NotFound, ServiceExceptionCode.QuestionsNotFound);
 
             return entity;
         }

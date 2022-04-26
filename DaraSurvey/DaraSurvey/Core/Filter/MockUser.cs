@@ -28,7 +28,7 @@ namespace DaraSurvey.Core.Filter
 
             var role = Role == Role.root
                 ? "root"
-                : "survey";
+                : "users";
 
             context.HttpContext.User = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
             {

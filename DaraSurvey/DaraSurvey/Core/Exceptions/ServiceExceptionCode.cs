@@ -30,6 +30,7 @@
         AlreadyHasThisSurvey = 73,
         UserSurveyHasNotRequestedStatus = 74,
         SurveyHasActiveUser = 75,
-        DeleteSurveyQuestionsFirst = 76
+        DeleteSurveyQuestionsFirst = 76,
+        QuestionsNotFound = 77
     }
 }
