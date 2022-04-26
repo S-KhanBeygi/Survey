@@ -145,8 +145,8 @@ namespace DaraSurvey.Services.SurveryServices
             if (model.IsRequired.HasValue)
                 q = q.Where(o => o.IsRequired == model.IsRequired);
 
-            if (model.IsContable.HasValue)
-                q = q.Where(o => o.IsContable == model.IsContable);
+            if (model.IsCountable.HasValue)
+                q = q.Where(o => o.IsCountable == model.IsCountable);
 
             if (model.MinCreated.HasValue)
                 q = q.Where(o => o.Created >= model.MinCreated);

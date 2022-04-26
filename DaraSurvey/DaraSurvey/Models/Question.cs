@@ -20,7 +20,7 @@ namespace DaraSurvey.Services.SurveryServices.Models
 
         public bool IsRequired { get; set; }
 
-        public bool IsContable { get; set; }
+        public bool IsCountable { get; set; }
 
         public string WidgetData
         {

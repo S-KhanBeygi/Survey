@@ -28,7 +28,7 @@ namespace DaraSurvey.Services.SurveryServices.Entities
 
         public bool IsRequired { get; set; }
 
-        public bool IsContable { get; set; }
+        public bool IsCountable { get; set; }
 
         public ViewModelBase Widget
         {
