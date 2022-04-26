@@ -10,7 +10,7 @@ namespace DaraSurvey.Entities
 {
     public class Widget : EntityBase<int>
     {
-        public string WidgetData { get; set; }
+        public string Data { get; set; }
     }
 
     // ----------------------

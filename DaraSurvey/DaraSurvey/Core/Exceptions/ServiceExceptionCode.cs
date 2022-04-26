@@ -31,6 +31,7 @@
         UserSurveyHasNotRequestedStatus = 74,
         SurveyHasActiveUser = 75,
         DeleteSurveyQuestionsFirst = 76,
-        QuestionsNotFound = 77
+        QuestionsNotFound = 77,
+        WidgetNotFound = 78
     }
 }
