@@ -26,6 +26,10 @@ namespace DaraSurvey.Services.SurveryServices.Models
         public TimeSpan? MinAllowedDelayTime { get; set; }
         public TimeSpan? MaxAllowedDelayTime { get; set; }
 
+        public int? WelcomePageWidgetId { get; set; }
+
+        public int? ThankYouPageWidgetId { get; set; }
+
         public string SurveyDesignerId { get; set; }
 
         public bool? HasLogo { get; set; }

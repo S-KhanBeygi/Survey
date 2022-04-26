@@ -169,6 +169,12 @@ namespace DaraSurvey.Services.SurveryServices
             if (model.MaxUpdated.HasValue)
                 q = q.Where(o => o.Updated <= model.MaxUpdated);
 
+            if (model.WelcomePageWidgetId.HasValue)
+                q = q.Where(o => o.WelcomePageWidgetId <= model.WelcomePageWidgetId);
+
+            if (model.ThankYouPageWidgetId.HasValue)
+                q = q.Where(o => o.ThankYouPageWidgetId <= model.ThankYouPageWidgetId);
+
             return q;
         }
 

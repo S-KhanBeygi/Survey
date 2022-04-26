@@ -1,5 +1,4 @@
-﻿using DaraSurvey.Services;
-using DaraSurvey.Services.SurveryServices;
+﻿using DaraSurvey.Services.SurveryServices;
 using DaraSurvey.WidgetServices;
 using Microsoft.Extensions.DependencyInjection;
 

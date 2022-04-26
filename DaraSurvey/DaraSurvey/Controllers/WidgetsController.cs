@@ -1,13 +1,7 @@
 ﻿using DaraSurvey.Core.Filter;
-using DaraSurvey.Core.Request;
-using DaraSurvey.Extentions;
 using DaraSurvey.Models;
-using DaraSurvey.Services.SurveryServices.Entities;
-using DaraSurvey.Services.SurveryServices.Models;
 using DaraSurvey.WidgetServices.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DaraSurvey.WidgetServices.Controllers
 {

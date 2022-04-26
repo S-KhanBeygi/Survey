@@ -1,6 +1,4 @@
-﻿using DaraSurvey.Core.Filter;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace DaraSurvey.Core.PackagesConfig
 {

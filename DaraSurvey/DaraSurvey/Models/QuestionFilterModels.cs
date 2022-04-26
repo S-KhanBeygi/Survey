@@ -10,6 +10,8 @@ namespace DaraSurvey.Services.SurveryServices.Models
 
         public int? SurveyId { get; set; }
 
+        public int? WidgetId { get; set; }
+
         public bool? IsRequired { get; set; }
 
         public bool? IsCountable { get; set; }

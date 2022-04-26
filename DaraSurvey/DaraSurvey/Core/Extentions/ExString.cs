@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web;
-
-namespace DaraSurvey.Core
+﻿namespace DaraSurvey.Core
 {
     public static class ExString
     {

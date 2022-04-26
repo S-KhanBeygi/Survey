@@ -35,7 +35,7 @@ namespace DaraSurvey.WidgetServices
 
         public Widget GetEntity(int id)
         {
-            var widget =_db.Set<Widget>().SingleOrDefault(o => o.Id == id);
+            var widget = _db.Set<Widget>().SingleOrDefault(o => o.Id == id);
             if (widget == null)
                 throw new ServiceException(HttpStatusCode.NotFound, ServiceExceptionCode.WidgetNotFound);
 

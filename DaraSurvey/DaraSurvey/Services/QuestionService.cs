@@ -145,6 +145,9 @@ namespace DaraSurvey.Services.SurveryServices
             if (model.IsRequired.HasValue)
                 q = q.Where(o => o.IsRequired == model.IsRequired);
 
+            if (model.WidgetId.HasValue)
+                q = q.Where(o => o.WidgetId == model.WidgetId);
+
             if (model.IsCountable.HasValue)
                 q = q.Where(o => o.IsCountable == model.IsCountable);
 

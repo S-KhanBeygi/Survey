@@ -1,6 +1,4 @@
-﻿using DaraSurvey.Core.BaseClasses;
-using DaraSurvey.WidgetServices.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using DaraSurvey.WidgetServices.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -29,27 +27,9 @@ namespace DaraSurvey.Services.SurveryServices.Models
 
         public string Logo { get; set; }
 
-        [BindProperty(BinderType = typeof(EditModelBinder))]
-        public EditModelBase WelcomePageWidget { get; set; }
+        public int WelcomePageWidgetId { get; set; }
 
-        public string WelcomePageWidgetData
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(WelcomePageWidget, JsonSeralizerSetting.SerializationSettings);
-            }
-        }
-
-        [BindProperty(BinderType = typeof(EditModelBinder))]
-        public EditModelBase ThankYouPageWidget { get; set; }
-        public string ThankYouPageWidgetData
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ThankYouPageWidget, JsonSeralizerSetting.SerializationSettings);
-            }
-        }
-
+        public int ThankYouPageWidgetId { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

@@ -1,26 +1,18 @@
 ﻿using DaraSurvey.Core;
-using DaraSurvey.WidgetServices;
-using DaraSurvey.WidgetServices.Models;
+using DaraSurvey.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DaraSurvey.Services.SurveryServices.Entities
 {
     public class Question : EntityBase<int>
     {
-        private readonly IWidgetService _widgetService;
-
-        public Question()
-        {
-            var serviceProvider = Startup.ServiceCollection.BuildServiceProvider();
-            _widgetService = serviceProvider.GetRequiredService<IWidgetService>();
-        }
-
         public string Text { get; set; }
 
-        public string WidgetData { get; set; }
+        [ForeignKey("Widget")]
+        public int WidgetId { get; set; }
+        public Widget Widget { get; set; }
 
         [ForeignKey("Survey")]
         public int SurveyId { get; set; }
@@ -29,11 +21,6 @@ namespace DaraSurvey.Services.SurveryServices.Entities
         public bool IsRequired { get; set; }
 
         public bool IsCountable { get; set; }
-
-        public ViewModelBase Widget
-        {
-            get { return _widgetService.GetWidget(this.WidgetData); }
-        }
     }
 
     // ----------------------

@@ -28,7 +28,7 @@ namespace DaraSurvey.WidgetServices.Controllers
 
         [HttpGet("overview")]
         [MockUser(Role = Role.users)]
-        [MockAuth(Roles ="users")]
+        [MockAuth(Roles = "users")]
         public ActionResult<IEnumerable<SurveyOverviewRes>> GetOverview([FromQuery] SurveyOverviewOrderedFilter model)
         {
             model.UserId = Request.GetUserId();

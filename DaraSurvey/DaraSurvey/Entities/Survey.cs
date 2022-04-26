@@ -1,6 +1,6 @@
 ﻿using DaraSurvey.Core;
+using DaraSurvey.Entities;
 using DaraSurvey.WidgetServices;
-using DaraSurvey.WidgetServices.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.DependencyInjection;
@@ -40,24 +40,17 @@ namespace DaraSurvey.Services.SurveryServices.Entities
 
         public string Logo { get; set; }
 
-        public string WelcomePageWidgetData { get; set; }
+        [ForeignKey("WelcomePageWidget")]
+        public int WelcomePageWidgetId { get; set; }
+        public Widget WelcomePageWidget { get; set; }
 
-        public string ThankYouPageWidgetData { get; set; }
+        [ForeignKey("ThankYouPageWidget")]
+        public int ThankYouPageWidgetId { get; set; }
+        public Widget ThankYouPageWidget { get; set; }
 
         public IEnumerable<Question> Questions { get; set; }
 
         public IEnumerable<UsersSurvey> UsersSurvey { get; set; }
-
-
-        public ViewModelBase WelcomePageWidget
-        {
-            get { return _widgetService.GetWidget(this.WelcomePageWidgetData); }
-        }
-
-        public ViewModelBase ThankYouPageWidget
-        {
-            get { return _widgetService.GetWidget(this.ThankYouPageWidgetData); }
-        }
     }
 
     // --------------------
