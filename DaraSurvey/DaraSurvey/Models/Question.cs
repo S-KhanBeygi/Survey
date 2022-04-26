@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace DaraSurvey.Services.SurveryServices.Models
 {
-    public abstract class QuestionDtoBase
+    public class QuestionDtoBase
     {
         public string Text { get; set; }
 
