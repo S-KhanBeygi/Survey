@@ -7,10 +7,14 @@ namespace DaraSurvey.Services.SurveryServices.Models
 {
     public class QuestionDtoBase
     {
+        private EditModelBase _widget;
         public string Text { get; set; }
 
-        [BindProperty(BinderType = typeof(EditModelBinder))]
-        public EditModelBase Widget { get; set; }
+        public EditModelBase Widget 
+        {
+            get { return _widget; }
+            set { _widget = WidgetsDataDeserializer.Deserialize(JsonConvert.SerializeObject(value, JsonSeralizerSetting.SerializationSettings)); } 
+        }
 
         public int SurveyId { get; set; }
 

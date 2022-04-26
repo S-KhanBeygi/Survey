@@ -62,6 +62,8 @@ namespace DaraSurvey.WidgetServices.Controllers
         [MockAuth(Roles = "root")]
         public ActionResult<QuestionRes> Create([FromBody] QuestionCreation model)
         {
+            var q = model.Widget;
+
             var entity = _questionService.Create(model);
             var result = _mapper.Map<QuestionRes>(entity);
             return Ok(result);
