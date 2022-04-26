@@ -38,7 +38,6 @@ namespace DaraSurvey.Services.SurveryServices.Entities
 
         public string SurveyDesignerId { get; set; }
 
-        [Attachment("Survey", "Logo")]
         public string Logo { get; set; }
 
         public string WelcomePageWidgetData { get; set; }
